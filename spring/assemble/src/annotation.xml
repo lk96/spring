@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+<!--         第一种方式 -->
+<!--         使用context命名空间，在配置文件中开启相应的注解处理器 -->
+		<context:annotation-config/>
+		<bean id="userDao" class="com.inspur.entity.UserDaoImpl"></bean>
+		<bean id="userService" class="com.inspur.entity.UserServiceImpl"></bean>
+		<bean id="userController" class="com.inspur.entity.UserController"></bean>
+<!-- 第二种方式 -->
+<!-- 		<context:component-scan base-package="com.inspur.entity"></context:component-scan> -->
+</beans>

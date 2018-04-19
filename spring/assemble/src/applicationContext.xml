@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+<!--         使用构造器注入方式装配User实例 -->
+	<bean id="user1" class="com.inspur.entity.User">
+		<constructor-arg index="0" value="tom"></constructor-arg>
+		<constructor-arg index="1" value="123456"></constructor-arg>
+		<constructor-arg index="2">
+			<list>
+				<value>"constructorvalue1"</value>
+				<value>"constructorvalue2"</value>
+			</list>
+		</constructor-arg>
+	</bean>
+<!-- 	使用设值注入方式装配User实例 -->
+	<bean id="user2" class="com.inspur.entity.User">
+	 	<property name="username" value="张三"></property>
+	 	<property name="password" value="654321"></property>
+<!-- 	 	注入list集合 -->
+		<property name="list">
+			<list>
+				<value>"setListvalue1"</value>
+				<value>"setListvalue1"</value>
+			</list>
+		
+		</property>
+	
+	</bean>
+
+
+</beans>
